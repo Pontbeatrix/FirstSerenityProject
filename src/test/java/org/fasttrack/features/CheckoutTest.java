@@ -16,11 +16,10 @@ public class CheckoutTest extends BaseTest{
         checkoutSteps.setStateField("Bihor");
         checkoutSteps.setPostCodeField("410568");
         checkoutSteps.setTelephonefield("0765988723");
+        checkoutSteps.clickAddressRadioButton();
         checkoutSteps.clickContinue1Button();
-        checkoutSteps.clickFreeshippingButton();
-        checkoutSteps.waitFor(3);
+        checkoutSteps.clickFreeShippingButton();
         checkoutSteps.clickContinue2Button();
-        checkoutSteps.waitFor(3);
         checkoutSteps.clickContinue3Button();
         checkoutSteps.clickPlaceOrderButton();
 
