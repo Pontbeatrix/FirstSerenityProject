@@ -1,27 +1,27 @@
 package org.fasttrack.features;
 
+import org.fasttrack.utils.Constans;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
 
     @Test
     public void loginWithValidCredentialsTest() {
-        loginSteps.navigateToLoginPage();
-        loginSteps.setUserEmail("pontebeatrix@gmail.com");
-        loginSteps.setPassword("123456789");
+
+        loginSteps.setUserEmail(Constans.USER_EMAIl);
+        loginSteps.setPassword(Constans.USER_PASS);
         loginSteps.clickLogin();
-        loginSteps.verifyUserIsLoggedIn("Maria Viktoria Branzas");
+        homeSteps.checkWelcomeMessage();
+
     }
 
     @Test
-    public void loginWithInvalidPasswordTest(){
-        loginSteps.navigateToLoginPage();
-        loginSteps.setUserEmail("pontebeatrix@gmail.com");
-        loginSteps.setPassword("12345678");
+    public void loginWithInvalidPasswordTest() {
+        loginSteps.setUserEmail(Constans.INVAlID_USER_EMAIl);
+        loginSteps.setPassword(Constans.INVALID_USER_PASS);
         loginSteps.clickLogin();
         loginSteps.verifyUserNotLoggedIn();
+
     }
-
-
 }

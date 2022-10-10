@@ -6,34 +6,28 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008/wp-login.php")
 public class HomePage extends PageObject {
 
-    @FindBy(css = ".skip-account .label")
-    private WebElementFacade accountLink;
 
-    @FindBy(css = "a[title='Log In']")
-    private WebElementFacade loginLink;
+    @FindBy(css = ".welcome-panel-content > h2")
+    private WebElementFacade checkWelcomeMessage;
 
-    @FindBy( id = "search")
-    private WebElementFacade searchField;
+    @FindBy(css = "#toplevel_page_woocommerce")
+    private WebElementFacade woocommerceButton;
 
-    @FindBy(css = ".search-button")
-    private WebElementFacade searchButton;
 
-    public void clickAccountLink() {
-        clickOn(accountLink);
+    public String getCheckWelcomeMessage() {
+        return checkWelcomeMessage.getText();
     }
 
-    public void clickLoginLink() {
-        clickOn(loginLink);
+    public void clickWoocommerceButton() {
+        clickOn(woocommerceButton);
     }
 
-    public void setSearchField(String value){
-        typeInto(searchField,value);
-    }
 
-    public void clickSearchButton(){
-        clickOn(searchButton);
-    }
 }
+
+
+
+

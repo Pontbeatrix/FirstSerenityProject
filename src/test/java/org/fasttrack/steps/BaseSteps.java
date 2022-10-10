@@ -5,12 +5,15 @@ import org.fasttrack.pages.*;
 
 public class BaseSteps extends ScenarioSteps {
 
-    protected AccountPage accountPage;
+
     protected HomePage homePage;
     protected LoginPage loginPage;
-    protected SearchResultsPage searchResultsPage;
 
-    protected CartPage cartPage;
+    protected ProductPage productPage;
 
-    protected CheckOutPage checkOutPage;
+    protected CommentPage commentPage;
+
+    protected OrdersPage ordersPage;
+
+    protected CouponPage couponPage;
 }

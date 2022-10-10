@@ -6,16 +6,16 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class LoginPage extends PageObject {
 
-    @FindBy(id = "email")
+    @FindBy(id = "user_login")
     private WebElementFacade emailField;
 
-    @FindBy(id = "pass")
+    @FindBy(id = "user_pass")
     private WebElementFacade passwordField;
 
-    @FindBy(id = "send2")
+    @FindBy(id = "wp-submit")
     private WebElementFacade loginButton;
 
-    @FindBy(css = ".error-msg span")
+    @FindBy(id = "login_error")
     private WebElementFacade errorMessageElement;
 
     public void setEmailField(String value) {
@@ -30,7 +30,7 @@ public class LoginPage extends PageObject {
         clickOn(loginButton);
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         return errorMessageElement.getText();
     }
 
